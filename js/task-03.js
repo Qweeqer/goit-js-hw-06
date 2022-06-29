@@ -17,13 +17,16 @@ galleryList.style.display = "flex";
 galleryList.style.flexWrap = "wrap";
 galleryList.style.gap = "15px"
 galleryList.style.listStyle = "none";
+
 const galleryMarkup = images.map((image) => {
   return `<li class="gallery__item"><img class="gallery__img" src="${image.url}" alt="${image.alt}" width = 400 height = 300></li>`;
 }
 );
-
-// function createGalleryItem({ url, alt }) {
-//   return `<li><img src="${url}" alt="${alt}" width = 200 height = 150></li>`;
-// }
+console.log(galleryList.children);
 galleryList.insertAdjacentHTML("afterbegin", galleryMarkup.join(""));
-// galleryList.setAttribute("style", "list-style-type:none; display: flex;");
+const imgList = document.querySelectorAll("img")
+console.log(imgList);
+imgList.forEach(img => {
+  img.style.objectFit = "cover";
+  console.log(img);
+});
