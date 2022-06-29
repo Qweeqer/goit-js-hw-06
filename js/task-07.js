@@ -1,6 +1,6 @@
 const selectFontSizeEl = document.querySelector("#font-size-control");
 const spanText = document.querySelector("#text");
-input.setAttribute.value = "16"
+selectFontSizeEl.setAttribute("value", "16");
 selectFontSizeEl.addEventListener("input",
     handSelectFontSize);
     
