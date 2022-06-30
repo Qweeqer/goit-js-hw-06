@@ -3,10 +3,11 @@ const addRemoveClass = (remove, add) => {
   validation.classList.remove(`${remove}`);
   validation.classList.add(`${add}`);
 };
-const validSymbol = (symbol) => {
-    console.log(symbol.currentTarget.value.length);
-    console.log(Number(validation.dataset.maxlength) === symbol.currentTarget.value.length);
-  if (Number(validation.dataset.length) === symbol.currentTarget.value.length) {
+const validSymbol = (event) => {
+  const { value } = event.currentTarget;
+    console.log(value.length);
+    console.log(Number(validation.dataset.length) === value.length);
+  if (Number(validation.dataset.length) === value.length) {
     addRemoveClass("invalid", "valid");
   } else {
       addRemoveClass("valid", "invalid");
